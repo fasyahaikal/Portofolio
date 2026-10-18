@@ -4,7 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fasya Haikal – Portofolio Data Science &amp; Machine Learning</title>
-<meta name="description" content="Portofolio Fasya Haikal, mahasiswa Data Science BINUS University: proyek machine learning, prediksi, dan deployment sederhana dengan Python untuk lamaran magang.">
+<meta name="description" content="Portofolio Fasya Haikal, mahasiswa Data Science BINUS University. Proyek prediksi dengan Python dan scikit-learn, neural network, dan aplikasi Streamlit.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fasya Haikal – Portofolio Data Science &amp; Machine Learning">
+<meta property="og:description" content="Proyek machine learning dan analisis data dari mahasiswa Data Science BINUS University yang sedang mencari magang.">
+<meta property="og:url" content="https://fasyahaikal.my.id/">
+<meta property="og:image" content="https://fasyahaikal.my.id/images/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -14,7 +19,7 @@ color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px
 :root[data-theme="dark"]{--bg:#0E1620;--surface:#16212E;--ink:#E7EEF5;--muted:#93A5B7;--line:#2A3A4B;--accent:#7BA3FF;--accent-ink:#0E1620;--grid:rgba(231,238,245,.06);color-scheme:dark}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
 h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.15;margin:0;letter-spacing:-.02em}
 a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
@@ -23,41 +28,46 @@ nav{display:flex;justify-content:space-between;align-items:center;gap:8px 20px;f
 nav .links{display:flex;gap:4px 18px;flex-wrap:wrap}
 nav a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
 nav a:hover{color:var(--accent)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 64px}
-.hero h1{font-size:clamp(34px,5.5vw,58px);font-weight:800}
-.hero p.lead{font-size:19px;color:var(--muted);max-width:34em;margin:20px 0 28px}
+.hero{display:grid;grid-template-columns:1fr 290px;gap:48px;align-items:center;padding:36px 0 64px}
+.hero h1{font-size:clamp(34px,5.2vw,56px);font-weight:800}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:33em;margin:20px 0 28px}
+.photo{margin:0}
+.photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:14px;border:1.5px solid var(--ink);box-shadow:8px 8px 0 var(--line);background:var(--surface)}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:8px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:transparent;font-family:inherit;font-size:16px}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btn.off{border-style:dashed;color:var(--muted);border-color:var(--muted);cursor:not-allowed}
-.flow{background:var(--surface);border:1.5px solid var(--ink);border-radius:10px;padding:20px}
-.flow ol{list-style:none;margin:0;padding:0;counter-reset:s}
-.flow li{counter-increment:s;display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line);font-weight:500}
-.flow li:last-child{border:0}
-.flow li::before{content:counter(s);font:700 15px "Bricolage Grotesque",sans-serif;color:var(--accent);min-width:1.2em}
-.flow li span{color:var(--muted);font-weight:400;font-size:15px;margin-left:auto;text-align:right}
-.flow p{margin:12px 0 0;font-size:14px;color:var(--muted)}
 section{padding:52px 0;border-top:1.5px solid var(--line)}
 section h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px}
 .sub{color:var(--muted);margin:0 0 26px;max-width:42em}
-.about p{max-width:44em;margin:0 0 14px}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:28px}
-.facts h3,.skills h3{font-size:19px;margin-bottom:8px}
-.facts ul,.skills ul{margin:0;padding-left:18px;color:var(--muted)}
-.facts p{margin:0;color:var(--muted)}
-.proj{padding:26px 0 26px 20px;border-left:4px solid var(--accent);background:linear-gradient(90deg,var(--surface),transparent);margin-bottom:22px}
-.proj.minor{border-left-color:var(--line);padding-top:20px;padding-bottom:20px}
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:48px}
+.about p{max-width:38em;margin:0 0 14px}
+.about h3,.skills h3{font-size:19px;margin-bottom:8px}
+.about ul,.skills ul{margin:0;padding-left:18px;color:var(--muted)}
+.edu{color:var(--muted);margin:0 0 20px!important}
+.flow ol{list-style:none;margin:0 0 10px;padding:0;counter-reset:s}
+.flow li{counter-increment:s;display:flex;gap:12px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);font-weight:500}
+.flow li:last-child{border:0}
+.flow li::before{content:counter(s);font:700 15px "Bricolage Grotesque",sans-serif;color:var(--accent);min-width:1.2em}
+.flow li span{color:var(--muted);font-weight:400;font-size:15px;margin-left:auto;text-align:right}
+.flow p{font-size:14px;color:var(--muted);margin:0}
+.proj{padding:26px 0 26px 22px;border-left:4px solid var(--accent);margin-bottom:22px}
+.proj.minor{border-left-color:var(--line);padding-top:18px;padding-bottom:18px}
+.phead{display:flex;justify-content:space-between;gap:8px 24px;align-items:flex-start;flex-wrap:wrap}
 .proj h3{font-size:25px}
 .proj.minor h3{font-size:21px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-.tags span{font-size:14px;padding:2px 10px;border:1px solid var(--line);border-radius:99px;background:var(--surface);color:var(--muted)}
-dl.det{display:grid;grid-template-columns:130px 1fr;gap:10px 20px;margin:14px 0 0}
+.tools{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.tools b{color:var(--ink);font-weight:500}
+.res{text-align:right}
+.res b{display:block;font:800 34px/1 "Bricolage Grotesque",sans-serif;color:var(--accent)}
+.res small{display:block;margin-top:4px;color:var(--muted);font-size:14px;max-width:15em;margin-left:auto}
+dl.det{display:grid;grid-template-columns:130px 1fr;gap:10px 20px;margin:16px 0 0}
 dl.det dt{font:700 16px "Bricolage Grotesque",sans-serif}
 dl.det dd{margin:0}
 .todo{color:var(--muted);font-size:15px}
 .slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
-.slot{border:1.5px dashed var(--muted);border-radius:8px;padding:16px;font-size:14px;color:var(--muted);min-height:76px;display:flex;align-items:center}
-.team{display:inline-block;font-size:14px;font-weight:500;padding:2px 10px;border-radius:6px;background:var(--accent);color:var(--accent-ink);margin-left:8px;vertical-align:middle}
+.slot{border:1.5px dashed var(--muted);border-radius:8px;padding:14px 16px;font-size:14px;color:var(--muted);min-height:64px;display:flex;align-items:center}
+.kind{font:500 15px "IBM Plex Sans",sans-serif;color:var(--muted);margin-left:8px;letter-spacing:0}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:18px 0 0;padding:0;list-style:none}
 .gal button{all:unset;cursor:zoom-in;display:block;width:100%;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;background:#0A0F16}
 .gal button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
@@ -68,23 +78,23 @@ dialog{max-width:min(1100px,94vw);width:100%;border:1.5px solid var(--ink);borde
 dialog::backdrop{background:rgba(5,10,16,.75)}
 dialog img{width:100%;height:auto;display:block;border-radius:6px}
 dialog p{margin:10px 0}
-.logo{height:44px;width:auto;display:block;background:#fff;border-radius:6px;padding:4px 8px;margin-bottom:10px}
+.logo{height:44px;width:auto;display:block;background:#fff;border-radius:6px;padding:4px 8px;margin:10px 0}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
 footer{padding:48px 0 64px;border-top:1.5px solid var(--line)}
 footer h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px}
 footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wrap:anywhere}
-@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:20px}dl.det{grid-template-columns:1fr;gap:2px}dl.det dd{margin-bottom:10px}}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:28px;padding-top:16px}.photo{order:-1;max-width:210px}.about{grid-template-columns:1fr;gap:28px}dl.det{grid-template-columns:1fr;gap:2px}dl.det dd{margin-bottom:10px}.res{text-align:left}.res small{margin-left:0}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <div class="wrap">
+<header>
 <nav aria-label="Navigasi utama"><strong>Fasya Haikal</strong><div class="links"><a href="#tentang">Tentang</a><a href="#proyek">Proyek</a><a href="#lainnya">Proyek lain</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a></div></nav>
-
-<header class="hero">
+<div class="hero">
 <div>
-<h1>Mahasiswa Data Science yang membangun dan mengevaluasi model prediktif.</h1>
-<p class="lead">Saya Fasya, mahasiswa Data Science di BINUS University dengan minat pada machine learning, data analytics, dan model deployment. Saya mencari magang di bidang Data Science, Machine Learning, atau Data Analyst.</p>
+<h1>Saya Fasya, mahasiswa Data Science yang belajar lewat proyek.</h1>
+<p class="lead">Di BINUS University saya mengerjakan proyek prediksi dengan Python, dari mengolah data sampai menyiapkan aplikasi Streamlit. Sekarang saya mencari magang di bidang Data Science, Machine Learning, atau Data Analyst.</p>
 <div class="btns">
 <a class="btn primary" href="#proyek">Lihat proyek</a>
 <a class="btn" href="#kontak">Hubungi saya</a>
@@ -94,7 +104,25 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 <a class="btn" href="https://www.linkedin.com/in/fasya-haikal-44a39743b/" target="_blank" rel="noopener">LinkedIn</a>
 </div>
 </div>
+<!-- Foto: ganti file images/profile.jpg dengan foto lain (nama file sama), rasio 4:5 paling pas -->
+<figure class="photo"><img src="images/profile.jpg" width="800" height="1000" alt="Foto Fasya Haikal, berkacamata dan memakai kemeja batik, tersenyum di area taman luar ruangan"></figure>
+</div>
+</header>
+
+<main>
+<section id="tentang">
+<h2>Tentang saya</h2>
+<div class="about">
+<div>
+<p>Saya mahasiswa Data Science di BINUS University. Sebagian besar yang saya pelajari datang dari mengerjakan proyek: mengolah dataset, melatih model, melihat seberapa baik hasilnya, lalu menyiapkannya supaya bisa dipakai lewat aplikasi sederhana.</p>
+<p>Proyek saya sejauh ini berupa prediksi dengan Python dan scikit-learn, satu eksperimen neural network, dan beberapa tugas di luar ML seperti metode numerik dan perancangan aplikasi.</p>
+<p>Saya ingin magang untuk mendapatkan pengalaman nyata dan memperdalam kemampuan teknis saya.</p>
+<p class="edu"><strong>Pendidikan:</strong> Data Science, BINUS University</p>
+<h3>Minat magang</h3>
+<ul><li>Data Science Intern</li><li>Machine Learning Intern</li><li>Data Analyst Intern</li></ul>
+</div>
 <div class="flow" aria-label="Alur kerja proyek machine learning">
+<h3>Alur kerja di proyek saya</h3>
 <ol>
 <li>Data <span>pengolahan dan pembersihan</span></li>
 <li>Preprocessing <span>Pipeline, feature engineering</span></li>
@@ -102,17 +130,8 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 <li>Evaluasi <span>akurasi, R²</span></li>
 <li>Deployment <span>Streamlit, GitHub</span></li>
 </ol>
-<p>Ilustrasi alur kerja yang saya pelajari lewat proyek akademik. Ini bukan grafik hasil eksperimen.</p>
+<p>Gambaran alur kerja, bukan grafik hasil eksperimen.</p>
 </div>
-</header>
-
-<section id="tentang" class="about">
-<h2>Tentang saya</h2>
-<p>Saya adalah mahasiswa Data Science di BINUS University yang tertarik pada machine learning, data analytics, dan pengembangan model prediktif. Melalui berbagai proyek akademik, saya mempelajari proses pengolahan data, pelatihan model, evaluasi performa, dan deployment sederhana menggunakan Python.</p>
-<p>Saat ini, saya ingin mengembangkan kemampuan teknis dan mendapatkan pengalaman nyata melalui kesempatan magang di bidang Data Science atau Machine Learning.</p>
-<div class="facts">
-<div><h3>Pendidikan</h3><p>BINUS University<br>Data Science</p></div>
-<div><h3>Minat magang</h3><ul><li>Data Science Intern</li><li>Machine Learning Intern</li><li>Data Analyst Intern</li></ul></div>
 </div>
 </section>
 
@@ -121,11 +140,13 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 <p class="sub">Tiga proyek machine learning, diikuti WealthPath sebagai proyek tim. Bukti visual dan link repository akan saya tambahkan setelah siap.</p>
 
 <article class="proj">
-<h3>Credit Score Prediction</h3>
-<div class="tags"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Random Forest</span><span>Streamlit</span></div>
+<div class="phead">
+<div><h3>Credit Score Prediction</h3><p class="tools"><b>Tools:</b> Python, pandas, scikit-learn, Streamlit</p></div>
+<div class="res"><b>74%</b><small>akurasi pada dataset 25.000 baris</small></div>
+</div>
 <dl class="det">
-<dt>Problem</dt><dd>Mengembangkan model machine learning untuk mengklasifikasikan kategori credit score berdasarkan data yang tersedia (dataset 25.000 baris).</dd>
-<dt>Approach</dt><dd>Python, pandas, dan scikit-learn untuk pengolahan data, dan Random Forest untuk klasifikasi. Model disimpan dalam format .pkl dan disiapkan untuk integrasi dengan aplikasi Streamlit.</dd>
+<dt>Problem</dt><dd>Mengklasifikasikan kategori credit score dari data yang tersedia.</dd>
+<dt>Approach</dt><dd>Pengolahan data dengan pandas dan scikit-learn, klasifikasi dengan Random Forest. Model disimpan sebagai file .pkl dan disiapkan untuk integrasi dengan aplikasi Streamlit.</dd>
 <dt>Result</dt><dd>Akurasi 74% pada evaluasi yang dilakukan.</dd>
 <dt>My Contribution</dt><dd>Pengolahan data, pengembangan model, evaluasi performa, dan persiapan deployment.</dd>
 <dt>Project Links</dt><dd class="todo"><!-- TODO: link GitHub/notebook/demo -->Belum ditambahkan.</dd>
@@ -134,11 +155,13 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 </article>
 
 <article class="proj">
-<h3>Student Placement Prediction</h3>
-<div class="tags"><span>scikit-learn Pipeline</span><span>ColumnTransformer</span><span>MLflow</span><span>Streamlit</span></div>
+<div class="phead">
+<div><h3>Student Placement Prediction</h3><p class="tools"><b>Tools:</b> scikit-learn (Pipeline, ColumnTransformer), MLflow, Streamlit</p></div>
+<div class="res"><b>2 model</b><small>klasifikasi penempatan dan regresi gaji</small></div>
+</div>
 <dl class="det">
-<dt>Problem</dt><dd>Memprediksi hasil penempatan kerja mahasiswa dan mengestimasi gaji berdasarkan dataset yang digunakan.</dd>
-<dt>Approach</dt><dd>Pipeline dan ColumnTransformer untuk preprocessing, MLflow untuk pengelolaan model, dan Streamlit untuk antarmuka prediksi.</dd>
+<dt>Problem</dt><dd>Memprediksi apakah mahasiswa mendapat penempatan kerja, dan mengestimasi gajinya, dari dataset yang digunakan.</dd>
+<dt>Approach</dt><dd>Preprocessing disusun dengan Pipeline dan ColumnTransformer, model dikelola dengan MLflow, dan antarmuka prediksi disiapkan dengan Streamlit.</dd>
 <dt>Result</dt><dd>Mencakup dua pendekatan machine learning: klasifikasi (hasil penempatan) dan regresi (estimasi gaji).</dd>
 <dt>My Contribution</dt><dd class="todo"><!-- TODO: isi kontribusi sebenarnya -->Akan ditambahkan.</dd>
 <dt>Project Links</dt><dd class="todo"><!-- TODO: link GitHub/demo -->Belum ditambahkan.</dd>
@@ -147,12 +170,14 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 </article>
 
 <article class="proj">
-<h3>Agriculture Yield Prediction</h3>
-<div class="tags"><span>Artificial Neural Network</span><span>Regresi</span></div>
+<div class="phead">
+<div><h3>Agriculture Yield Prediction</h3><p class="tools"><b>Tools:</b> Artificial Neural Network (regresi)</p></div>
+<div class="res"><b>0,438 → 0,788</b><small>nilai R² sebelum dan sesudah eksperimen</small></div>
+</div>
 <dl class="det">
-<dt>Problem</dt><dd>Memprediksi hasil produksi pertanian menggunakan pendekatan machine learning.</dd>
-<dt>Approach</dt><dd>Mengembangkan Artificial Neural Network (ANN) untuk regresi dan melakukan eksperimen untuk meningkatkan performa model.</dd>
-<dt>Result</dt><dd>Nilai R² meningkat dari 0,438 menjadi 0,788.</dd>
+<dt>Problem</dt><dd>Memprediksi hasil produksi pertanian dengan pendekatan machine learning.</dd>
+<dt>Approach</dt><dd>Membangun Artificial Neural Network untuk regresi, lalu bereksperimen untuk memperbaiki performa model.</dd>
+<dt>Result</dt><dd>R² naik dari 0,438 menjadi 0,788.</dd>
 <dt>My Contribution</dt><dd>Eksperimen model dan evaluasi performa.</dd>
 <dt>Project Links</dt><dd class="todo"><!-- TODO: link GitHub/notebook -->Belum ditambahkan.</dd>
 </dl>
@@ -160,8 +185,7 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 </article>
 
 <article class="proj" id="wealthpath">
-<h3>WealthPath <span class="team">Proyek tim</span></h3>
-<div class="tags"><span>Aplikasi web keuangan pribadi</span><span>Riset pengguna</span><span>Analisis feedback</span></div>
+<div class="phead"><div><h3>WealthPath <span class="kind">proyek tim</span></h3><p class="tools"><b>Fokus saya:</b> riset pengguna dan analisis feedback</p></div></div>
 <p>Aplikasi keuangan pribadi dengan pencatatan pemasukan dan pengeluaran, budget bulanan per kategori, target keuangan, pelacakan aset, dan konsultasi dengan advisor (pembayaran disimulasikan untuk demo).</p>
 <dl class="det">
 <dt>Kontribusi saya</dt><dd>Dokumentasi, penyebaran survei, analisis feedback pengguna, laporan, dan presentasi. Pengembangan aplikasi dikerjakan bersama tim.</dd>
@@ -183,24 +207,24 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 <h2>Proyek tambahan</h2>
 <article class="proj minor">
 <h3>OverheadMNIST</h3>
-<div class="tags"><span>Autoencoder</span><span>Deep Learning</span></div>
-<p>Autoencoder untuk mempelajari representasi dan merekonstruksi gambar.</p>
+<p class="tools"><b>Tools:</b> autoencoder (deep learning, computer vision)</p>
+<p>Autoencoder untuk mempelajari representasi gambar dan merekonstruksinya.</p>
 </article>
 <article class="proj minor">
 <h3>Smart Grid Energy Diagnostics</h3>
-<div class="tags"><span>Metode numerik</span></div>
+<p class="tools"><b>Tools:</b> metode numerik</p>
 <p>Penerapan metode numerik: Bisection, Cubic Interpolation, Gauss-Seidel, Least Squares, dan Newton-Raphson.</p>
 </article>
 <article class="proj minor">
-<h3>AccessJob <span class="team">Proyek desain</span></h3>
-<div class="tags"><span>Use case diagram</span><span>Activity diagram</span><span>Arsitektur</span></div>
-<p>Rancangan aplikasi pencarian kerja inklusif. Mencakup arsitektur, use case diagram, dan activity diagram. Ini proyek perancangan dan belum diimplementasikan sebagai aplikasi.</p>
+<h3>AccessJob <span class="kind">proyek desain</span></h3>
+<p class="tools"><b>Dibuat:</b> arsitektur, use case diagram, activity diagram</p>
+<p>Rancangan aplikasi pencarian kerja inklusif. Ini proyek perancangan dan belum diimplementasikan sebagai aplikasi.</p>
 </article>
 <article class="proj minor">
-<h3>Temuin <span class="team">Validasi ide</span></h3>
+<h3>Temuin <span class="kind">validasi ide</span></h3>
 <img class="logo" src="data:image/webp;base64,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" alt="Logo Temuin: dua lingkaran biru yang beririsan dengan irisan hijau mint">
-<div class="tags"><span>Business Model Canvas</span><span>Wawancara</span></div>
-<p>Ide layanan B2B lead generation berbasis data, AI, dan automation. Yang sudah dilakukan: validasi ide, persiapan pertanyaan wawancara, dan Business Model Canvas. Aplikasinya belum dibangun.</p>
+<p class="tools"><b>Sudah dilakukan:</b> validasi ide, pertanyaan wawancara, Business Model Canvas</p>
+<p>Ide layanan B2B lead generation berbasis data, AI, dan automation. Aplikasinya belum dibangun.</p>
 </article>
 </section>
 
@@ -213,6 +237,7 @@ footer .mail{display:inline-block;margin:6px 0 18px;font-weight:500;overflow-wra
 <div><h3>Tambahan</h3><ul><li>Metode numerik</li><li>Analisis feedback pengguna</li></ul></div>
 </div>
 </section>
+</main>
 
 <footer id="kontak">
 <h2>Kontak</h2>
